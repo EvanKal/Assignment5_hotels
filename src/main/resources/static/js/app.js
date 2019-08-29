@@ -22,6 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
             entries = myJson[1].entries;
             filteredentries = entries;
             displayResults(entries);
+        })
+        .catch(function() {
+            document.querySelector("#hotelscontainer").innerHTML = "Something went wrong while fetching the list of hotels :(";
         });
         
 });
