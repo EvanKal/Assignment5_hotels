@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="searchcont">
+        <div id="search">
+            <span><i class="fa fa-search"></i></span>
+            <input type="search" placeholder="Search" list="cities">
+            <datalist id="cities">
+            </datalist>
+        </div>
+        <button>Search</button>
+    </div>
+    <div id="filterscontainer">
+        <a id="menuiconcont" href="#filterscontainer">
+            <span><i class="fa fa-filter"></i></span>
+        </a>
+
+        <div id="filtersrowone">
+            <div class="filtercont">
+                <div class="calendar checkin">
+                    <span><i class="fa fa-calendar"></i></span>
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin">
+                </div>
+            </div>
+            <div class="filtercont">
+                <div class="calendar checkout">
+                    <span><i class="fa fa-calendar"></i></span>
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout">
+                </div>
+            </div>
+            <div class="filtercont">
+                <div id="roomtype">
+                    <span><i class="fa fa-user"></i></i></span>
+                    <select name="roomtype">
+                        <option value="" disabled selected>Room type</option>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="familyroom">Family Rooms</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="filtersrowtwo">
+            <div class="slidercont">
+                <label for="price">Price</label>
+                <span id="slidervalue">Slider value</span>
+                <input type="range" name="price" min="0" max="10">
+            </div>
+            <div class="filtercont">
+                <label for="propertytype">Property type</label>
+                <select id="propertytype" name="propertytype">
+                    <option value="all" selected>All</option>
+                </select>
+            </div>
+            <div class="filtercont">
+                <label for="guestrating">Guest rating</label>
+                <select id="guestrating" name="guestrating">
+                    <option value="all" selected>All</option>
+                    <option value="okay">0-2 Okay</option>
+                    <option value="fair">2-6 Fair</option>
+                    <option value="good">6-7 Good</option>
+                    <option value="verygood">7-8.5 Very Good</option>
+                    <option value="excellent">8.5-10 Excellent</option>
+                </select>
+            </div>
+            <div class="filtercont">
+                <label for="hotellocation">Hotel location</label>
+                <select id="hotellocation" name="hotellocation">
+                    <option value="all" selected>All</option>
+                </select>
+            </div>
+            <div class="filtercont">
+                <label for="morefilters">More filters</label>
+                <select id="morefilters" name="morefilters">
+                    <option value="" selected disabled>Select</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div id="mainrow">
+            <div id="viewmapcont">
+                <button id="viewmapbutton">View Map</button>
+            </div>
+            <div id="sortcont">
+                <label for="sortby">Sort By</label>
+                <select id="sortby" name="sortby">
+                    <option value="all" selected>Our recommendations</option>
+                </select>
+            </div>
+        </div>
+        <div id="hotelscontainer">
+
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

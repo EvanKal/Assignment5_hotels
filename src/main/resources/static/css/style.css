@@ -1,0 +1,624 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 21, 2019, 8:42:20 PM
+    Author     : Los_e
+*/
+
+body * {
+    box-sizing: border-box;
+}
+
+body, 
+#filterscontainer, 
+#searchcont, 
+#filtersrowone, 
+#filtersrowtwo, 
+.filtercont,
+main, 
+#mainrow,
+#roomtype,
+#search,
+.slidercont,
+.calendar,
+#hotelscontainer,
+.hotel,
+.imgcont,
+.info,
+.mapcont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    /* max-width: 70vw; */
+    /* height: auto; */
+    background-color: lightgrey;
+    margin: auto;
+    font-family: Arial,Helvetica,Sans,Sans-Serif,Sans Serif;
+    color: darkslategray;
+}
+
+#filterscontainer {
+    width: 100%;
+}
+
+#searchcont {
+    /* position: relative; */
+    padding: 5px;
+    width: 100%;
+    height: 6vh;
+    background-color: DarkSlateGray;
+    align-items: center;
+    justify-content: center;
+}
+
+#search span {
+    width:  absolute
+}
+
+#search {
+    width: 80%;
+    height: 100%;
+    background-color: white;
+}
+
+#search span {
+    width: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#search input {
+    width: 97%;
+    border: none;
+    height: 100%;
+
+}
+
+#searchcont button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    background-color: steelblue;
+    color: white;
+}
+
+#menuiconcont {
+    display: none;
+}
+
+#filtersrowone {
+    padding: 5px;
+    width: 100%;
+    height: 6vh;
+    background-color: DarkSlateGray;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#filtersrowone .filtercont {
+    width: 33%;
+    height: 100%;
+    background-color: white;
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 2px;
+    justify-content: space-between;
+}
+
+.calendar label{
+    width: 90%;
+    height: 35%;
+    margin: 0;
+    font-size: small;
+}
+
+.calendar span {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.calendar input {
+    width: 90%;
+    border: none;
+    height: 55%;
+}
+
+.checkin {
+    border-left: 7px solid steelblue;
+} 
+
+.checkout {
+    border-left: 7px solid darkorange;
+}
+
+#roomtype {
+    height: 100%;
+    width: 100%;
+}
+
+#roomtype select {
+    border: none;
+    width: 90%;
+    height: 100%;
+}
+
+#roomtype span {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+#filtersrowtwo {
+    padding: 5px;
+    width: 100%;
+    height: 7vh;
+    background-color: DarkSlateGray;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#filtersrowtwo .slidercont {
+    width: 33%;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 2px;
+    padding-right: 10px;
+}
+
+#filtersrowtwo .slidercont {
+    /* flex-grow: 2; */
+}
+
+#filtersrowtwo .slidercont label{
+    width: 50%;
+    height: 35%;
+    color: lightgray;
+    font-size: small;
+
+}
+
+#filtersrowtwo .slidercont span{
+    width: 50%;
+    height: 35%;
+    color: lightgray;
+    font-size: small;
+    text-align: right;
+}
+
+#filtersrowtwo .slidercont input{
+    width: 100%;
+    height: 55%;
+    color: lightgray;
+    font-size: small;
+    text-align: right;
+}
+
+/* From CSS Tricks! */
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* border: 1px solid gray; */
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background-color: lightgray;
+    cursor: pointer;
+    margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+    background: steelblue;
+    border-radius: 1.3px;
+    /* border: 0.2px solid #010101; */
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: steelblue;
+  }
+  
+
+/* ///////////////////////////// */
+
+#filtersrowtwo .filtercont {
+    width: 16%;
+    height: 100%;
+    /* background-color: white; */
+    /* flex-grow: 1; */ 
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    border-left: 1px solid gray;
+}
+
+#filtersrowtwo .filtercont label{
+    width: 100%;
+    height: 35%;
+    color: lightgray;
+    font-size: small;
+
+}
+
+#filtersrowtwo .filtercont select{
+    width: 100%;
+    height: 55%;
+    color: white;
+    background-color: DarkSlateGray;
+    border: none;
+}
+
+
+
+main {
+    width: 100%;
+}
+
+#mainrow {
+    padding: 5px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sortcont label {
+    font-weight: bold;
+    font-size: small;
+    color: darkslategrey;
+}
+
+/* Hotels display */
+
+#hotelscontainer {
+    width: 100%;
+    /* height: 30vh; */
+    justify-content: center;
+}
+
+.hotel {
+    width: 100%;
+    height: 200px;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 6px -6px #777;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.hotel .info {
+    width: 30%;
+    height: 100%;
+    /* padding: 10px; */
+}
+
+.hotel .imgcont {
+    width: 190px;
+    height: 190px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hotel .mapcont {
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    flex-direction: column;
+    /* padding: 10px; */
+    border-left: 1px solid lightgray;
+
+}
+
+.hotel .imgcont img {
+    height: 100%;
+    width: auto;
+}
+
+.hotel .mapcont .viewmap {
+    width: 100px;
+    height: 25px;
+    color: darkslategray;
+    background-color: white;
+    border: 0;
+    border-left: 2px solid darkslategray;
+    font-weight: bold;
+}
+
+.hotel .info .name {
+    margin: 0;
+    width: 100%;
+}
+
+.hotel .info .rating {
+    /* width: 60%; */
+    color: #FFEF02;
+}
+
+.hotel .info .type {
+    /* width: 40%; */
+}
+
+.hotel .info .location {
+    width: 100%;
+}
+
+.hotel .info .ratings {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.hotel .info .ratings .no {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hotel .info .ratings .text {
+    /* width: 70%; */
+    font-weight: bold;
+}
+
+.hotel .info .price {
+    width: 100%;
+}
+
+/* Modal  */
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+/*display: none;*/
+width: 100%; /* Full width (cover the whole page) */
+height: 100%; /* Full height (cover the whole page) */
+top: 0; 
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.7);
+transition: opacity 500ms;
+z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+/* align-items: center; */
+}
+
+#overlay #modalcontent {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#overlay #modalcontent iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#overlay #close {
+
+    color: white;
+    position: relative;
+    left: 80%;
+    top: 15%;
+    width: 100%;
+    /* width: 100%; */
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+    margin-top: 10px;
+    text-decoration: none;
+
+}
+
+#viewmapbutton {
+    width: 100px;
+    height: 25px;
+    color: darkslategray;
+    background-color: white;
+    border: 0;
+    border-left: 2px solid darkslategray;
+    font-weight: bold;
+}
+
+#viewmapcont{ 
+    /* background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=-33.9775,151.036&zoom=13&format=png&maptype=roadmap&style=element:labels%7Cvisibility:off&style=feature:administrative.land_parcel%7Cvisibility:off&style=feature:administrative.neighborhood%7Cvisibility:off&size=164x132&key=AIzaSyDk4C4EBWgjuL1eBnJlu1J80WytEtSIags&scale=2'); */
+    background-image: url('/A5_hotels/img/staticmap.png');
+    padding: 5px 25px 5px 25px;
+    border: 1px solid white;
+}
+
+@media screen and (max-width: 415px) {
+
+body {
+ width: 98vw;
+ padding: 1vw;
+ margin: 0;
+}
+
+#searchcont {
+    padding: 0;
+}
+
+#search input {
+    width: 90%;
+}
+
+#search span {
+    width: 10%;
+}
+
+
+#filterscontainer {
+    position: fixed;
+    left: -90vw;
+    height: 100vh;
+    width: 90vw;
+    top: 0%;
+    background-color: DarkSlateGray;
+    /* background-color: white; */
+    align-content: flex-start;
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition: 0.5s;
+    padding: 2%;
+
+}
+
+#menuiconcont {
+    display: block;
+    box-sizing: content-box;
+    /* width: 20px; */
+    /* height: 20px; */
+    padding: 10px;
+    color: white;
+    position: absolute;
+    left: 100%;
+    top: 8%;
+    background-color: DarkSlateGray;
+}
+
+.slidein {
+    transform: translateX(90vw);
+}
+
+#filtersrowone {
+    height: auto;
+    justify-content: center;
+}
+
+#filtersrowone .filtercont {
+    
+    height: auto;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.calendar {
+    flex-direction: row;
+}
+
+#roomtype {
+    height: 6vh;
+}
+
+#filtersrowtwo {
+    height: auto;
+    justify-content: center;
+
+}
+
+#filtersrowtwo .slidercont{
+    height: auto;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+#filtersrowtwo .filtercont{
+    height: auto;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+#mainrow {
+    justify-content: flex-end;
+}
+
+.hotel {
+    height: fit-content;
+}
+
+.hotel .imgcont {
+    order: 2;
+    width: 50%;
+    height: 90px;
+}
+
+.hotel .info {
+    order: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.hotel .mapcont {
+    order: 3;
+    width: 50%;   
+}
+
+}
+
+@media screen and (min-width: 416px) and (max-width: 768px) {
+
+body {
+ width: 100vw;
+}
+
+}
+
+@media screen and (min-width: 769px) {
+
+body {
+ max-width: 769px;
+}
+
+}
